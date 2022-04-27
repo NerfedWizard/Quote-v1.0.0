@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class QuoteIDException extends RuntimeException {
 
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public QuoteIDException(String message) {
 		super(message);
 	}
