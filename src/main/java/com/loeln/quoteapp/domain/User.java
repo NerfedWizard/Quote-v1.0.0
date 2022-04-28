@@ -48,10 +48,16 @@ public class User implements UserDetails {
 	@Transient
 	private String confirmPassword;
 	private Date created_At;
+	private Date signed_In;
 
 	@PrePersist
 	protected void onCreate() {
 		this.created_At = new Date();
+	}
+
+	@PostPersist
+	protected void signedIn() {
+		this.signed_In = new Date();
 	}
 
 	@Override
