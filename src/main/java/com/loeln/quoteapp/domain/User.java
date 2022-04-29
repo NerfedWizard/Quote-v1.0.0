@@ -30,9 +30,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User implements UserDetails {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -55,8 +52,8 @@ public class User implements UserDetails {
 		this.created_At = new Date();
 	}
 
-	@PostPersist
-	protected void signedIn() {
+
+	public void setSigned_In() {
 		this.signed_In = new Date();
 	}
 

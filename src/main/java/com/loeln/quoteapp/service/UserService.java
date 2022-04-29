@@ -33,7 +33,12 @@ public class UserService {
 		}
 	}
 
-	public void userSignedIn(User newUser) {
-
-	}
+//	public void userSignedIn(String username) {
+//		try {
+//			User logUser = userRepository.findByUsername(username);
+//			logUser.setSigned_In();
+//		} catch (Exception e) {
+//			System.out.println(e);
+//		}
+//	}
 }

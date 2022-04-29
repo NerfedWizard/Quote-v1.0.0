@@ -49,13 +49,12 @@ public class UserController {
 		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationService(result);
 		if (errorMap != null)
 			return errorMap;
-
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = TOKEN_PREFIX + tokenProvider.generateToken(authentication);
 		System.out.println(jwt);
+//		userService.userSignedIn(loginRequest.getUsername());
 		return ResponseEntity.ok(new JWTLoginSuccessResponse(true, jwt));
 	}
 
